@@ -3,6 +3,9 @@
     font-weight: 200;
     color: #000000;
     background: #fdfdfd;
+    background-image: url("img/starbackground.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     grid-template-rows: minmax(auto, 20vh) repeat(5, 1fr);
     grid-template-columns: [full-start] repeat(28, [col-start] 1fr [col-end]) [full-end];
     margin: auto;
