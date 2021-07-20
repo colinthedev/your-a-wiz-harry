@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="resets" href="reset.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&family=Zen+Loop:ital@0;1&display=swap" rel="stylesheet">
+    <!-- font-family: 'Raleway', sans-serif; -->
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.4.0/dist/duet/duet.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.4.0/dist/duet/duet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@duetds/date-picker@1.4.0/dist/duet/themes/default.css" />
+
+    <title>Document</title>
+</head>
+<body class="grid">
+    <div class="topRow">
+        <img src="img/wizard-hat.png" alt="Wizard hat" class="wizard-imgs">
+        <img src="img/magic-wand.png" alt="Wizard wand" class="wizard-imgs">
+    </div>
+    <section class="chatWrapper">
+        <span class="intro">Congratulations on your acceptance to hogwarts! In order to place you ill need some information...</span>
+    <!-- Question 1 -->
+        <span class="speakingHat">Sorting-hat<br></span>
+        <div id="quiz" class="intro quiz"><br></div>
+        <div id="results" class="results"><br></div>
+    <!-- Question 2 -->
+        <div class="hidden">
+            <span class="speakingHat">Sorting-hat<br></span>
+            <div id="quiz" class="intro quiz"><br>Since this is your first time meeting me, let's say my birthday is today, XDATE<br></div>
+            <div id="results" class="results"><br></div>
+        </div>
+    <!-- Select birthday -->
+        <div id="birthday" class="hidden border">
+            <label for="date">Choose a date</label>
+                <duet-date-picker id="datefield" identifier="date" min="1920-01-01"
+                max="2020-07-18" value="Enter your birthday">
+                </duet-date-picker>
+            <button type="button" id="birthdayBtn" class="flexCenter inputBtn">Submit</button>
+            <div id="results" class="results"><br></div>
+        </div>
+    <!-- Question 3 -->
+        <div class="hidden">
+            <span class="speakingHat">Sorting-hat<br></span>
+            <div id="quiz" class="intro quiz"><br></div>   
+            <div class="selectHouse">
+                <span class="houseTitle">Choose wisely...</span>
+                <div class="houseRows">
+                    <button class="houseOptions gryf houseTxt">Gryffindor<img src="img/house/gryffindor-logo.svg" alt="Gryffindor" class="gryffindor"></button>
+                    <button class="houseOptions slyth houseTxt">Slytherin<img src="img/house/slytherin-logo.svg" alt="Slytherin" class="slytherin"></button>
+                    <button class="houseOptions raven houseTxt">Ravenclaw<img src="img/house/ravenclaw-logo.svg" alt="Ravenclaw" class="ravenclaw"></button>
+                    <button class="houseOptions huffle houseTxt">Hufflepuff<img src="img/house/hufflepuff-logo.svg" alt="Hufflepuff" class="hufflepuff"></button>
+                </div>
+                <button type="button" id="houseBtn" class="inputBtn houseBtn">Submit</button>
+            </div>
+        </div>
+        <div id="results" class="results"><br></div>    
+    </section>
+    
+    <div class="responseWrapper">
+        <input type="text" placeholder="Enter your response here" id="input" class="input">
+        <button type="button" id="submit" class="inputBtn">Submit</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
