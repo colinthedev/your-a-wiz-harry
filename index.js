@@ -96,18 +96,17 @@ function getInput() {
         let optionBtnArr = Array.from(optionButtons);
 
     // Add active class to selected button
-        optionButtons.forEach(el => {
+        optionBtnArr.forEach(el => {
             el.addEventListener('click', function() {
-                optionButtons.forEach(el => el.classList.remove('active'));
+                optionBtnArr.forEach(el => el.classList.remove('active'));
                 el.classList.add('active');
-            })
-        })
 
-        submitHouse.addEventListener('click', function() {
-           for (let i = 0; i < optionBtnArr.length; i++) {
-                return resultsContainer[3].innerHTML = `You've been placed in ${optionBtnArr[i].textContent}`, // Display result
-                document.querySelector('.selectHouse').style.display = 'none'; // Hide container after submit
-            }
+                submitHouse.addEventListener('click', function () {
+                    let selectedHouse = el; // Store user's selection
+                    return resultsContainer[3].innerHTML = `Congratulations! you've been placed in ${selectedHouse.textContent}`, // Display result
+                        document.querySelector('.selectHouse').style.display = 'none'; // Hide container after submit
+                })
+            })
         })
     };
     selectedHouse();
