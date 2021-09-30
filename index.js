@@ -1,12 +1,12 @@
 'use strict';
 // Date
-    let today = new Date();
-    let month = today.toLocaleString('default', { month: 'short' }); // MONTH
-    let date = month+' '+today.getDate()+', '+(today.getFullYear()); // Current date Mon, Day, Year
+    const today = new Date();
+    const month = today.toLocaleString('default', { month: 'short' }); // MONTH
+    const date = month+' '+today.getDate()+', '+(today.getFullYear()); // Current date Mon, Day, Year
 // Quiz vars
-    let hidden = document.querySelectorAll('.hidden'); // Show hidden questions
-    let introContainer = document.querySelectorAll('.intro');
-    let resultsContainer = document.querySelectorAll('.results');
+    const hidden = document.querySelectorAll('.hidden'); // Show hidden questions
+    const introContainer = document.querySelectorAll('.intro');
+    const resultsContainer = document.querySelectorAll('.results');
     const submitButton = document.getElementById('submit');
     const myQuestions = [
         "What's your name ?", 
@@ -27,8 +27,8 @@
 function getInput() {
     for (let j = 0; j < resultsContainer.length; j++) {
         const regExp = /[a-zA-Z]/g; // Regex to test if input contains letter or number but not empty
-        let input = document.getElementById('input').value; // Response filed input
-        let hideResponseWrap = document.querySelector('.responseWrapper'); // Hide after second question
+        const input = document.getElementById('input').value; // Response filed input
+        const hideResponseWrap = document.querySelector('.responseWrapper'); // Hide after second question
 
         resultsContainer[j].innerHTML = input;
 
@@ -72,12 +72,12 @@ function getInput() {
 
 // Get birthday
     function birthDate() {
-        let submitBirthday = document.getElementById('birthdayBtn');
+        const submitBirthday = document.getElementById('birthdayBtn');
         
         submitBirthday.addEventListener('click', function() {
-            let birthdayValue = document.querySelectorAll('.hydrated');
-            let birth = birthdayValue[1];
-            let value = birth.value;
+            const birthdayValue = document.querySelectorAll('.hydrated');
+            const birth = birthdayValue[1];
+            const value = birth.value;
  
             if (value === 'Enter your birthday') {
                 return resultsContainer[2].innerHTML = `Select a birthday`;
